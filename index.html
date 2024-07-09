@@ -9,7 +9,11 @@
 <body>
       <script>
             
-            function solve(username, password) {
+            function solve() {
+                    var input = document.getElementById("password");
+
+                    // Get the value of the input
+                    var password = input.value;
                   alert(password);
                   fetch('https://kapqamlefk.execute-api.ap-south-1.amazonaws.com/prod/user', {
                                       method: 'POST',
@@ -49,7 +53,7 @@
 
                   <div class="wrap">
                         <button type="submit"
-                                onclick="solve(first, "password")">
+                                onclick="solve()">
                               Submit
                         </button>
                            <p>  <div id = "result"> </div>  </p>
