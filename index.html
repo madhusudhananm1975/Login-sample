@@ -10,10 +10,10 @@
       <script>
             
             function solve() {
-                    var input = document.getElementById("password");
+                    var password = document.getElementById("password").value;
+                   var username= document.getElementById("first").value;
 
-                    // Get the value of the input
-                    var password = input.value;
+
                   alert(password);
                   fetch('https://kapqamlefk.execute-api.ap-south-1.amazonaws.com/prod/user', {
                                       method: 'POST',
