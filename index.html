@@ -9,15 +9,15 @@
 <body>
       <script>
             
-            function solve() {
-                  alert("I am inside solve");
+            function solve(username, password) {
+                  alert(username);
                   fetch('https://kapqamlefk.execute-api.ap-south-1.amazonaws.com/prod/user', {
                                       method: 'POST',
                                       headers: {
                                         'Content-Type': 'application/json'
                                       },
                                       body: JSON.stringify({
-                                                            "username": first,
+                                                            "username": username,
                                                             "password": password
                                                            })
                                     })
@@ -49,7 +49,7 @@
 
                   <div class="wrap">
                         <button type="submit"
-                                onclick="solve()">
+                                onclick="solve(first, password)">
                               Submit
                         </button>
                            <p>  <div id = "result"> </div>  </p>
