@@ -8,10 +8,22 @@
 
 <body>
       <script>
-            document.getElementById("demo").onclick = function() {myFunction()};
+            
             function solve() {
-                    document.getElementById("result").innerHTML = "YOU CLICKED ME!";
-                    alert("You clicked me");
+                  alert("I am inside solve");
+                  fetch('https://kapqamlefk.execute-api.ap-south-1.amazonaws.com/prod/user', {
+                                      method: 'POST',
+                                      headers: {
+                                        'Content-Type': 'application/json'
+                                      },
+                                      body: JSON.stringify({
+                                                            "username": first,
+                                                            "password": password
+                                                           })
+                                    })
+                                    .then(response => response.json())
+                                    .then(data => console.log(data))
+                                    .catch(error => console.error(error));
                                }
      </script>
       
